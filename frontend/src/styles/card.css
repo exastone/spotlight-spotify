@@ -1,0 +1,122 @@
+.card.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+
+    .album.card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .image {
+            height: 164px;
+            width: 164px;
+            outline: 1px #ffaaff solid;
+        }
+
+        .info {
+            margin: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .title {
+                outline: 1px #aa00aa solid
+            }
+
+            .artist {
+                outline: 1px #0022d9 solid
+            }
+        }
+
+    }
+}
+
+@media (prefers-color-scheme: light) {
+
+    .card.container {
+        width: 200px;
+        height: 200px;
+        background-color: oklch(90.67% 0 0);
+        border-radius: 10px;
+        color: black;
+        outline: 1px solid #dd0000;
+    }
+
+    .album.card {
+        background-color: oklch(92.19% 0 0);
+        border: 1px #00aa00 solid;
+
+        .image {
+            height: 164px;
+            width: 164px;
+            border: 1px #ffaaff solid;
+        }
+
+        .info {
+            margin: 8px;
+            background-color: #878787;
+            border: 2px #00aaaa solid;
+
+            .title {
+                background-color: #22aaff;
+                border: 1px #aa00aa solid
+            }
+
+            .artist {
+                background-color: #ffaa22;
+                border: 1px #0022d9 solid
+            }
+        }
+
+    }
+
+}
+
+
+@media (prefers-color-scheme: dark) {
+
+    .card.container {
+        width: 200px;
+        height: 200px;
+        background-color: #121212;
+        border-radius: 10px;
+        color: gold;
+        border: 1px solid #dd0000;
+
+    }
+
+    .album.card {
+        background-color: #181818;
+        border: 1px #00aa00 solid;
+        width: 100%;
+        height: 100%;
+
+        .image {
+            height: 164px;
+            width: 164px;
+            border: 1px #ffaaff solid;
+        }
+
+        .info {
+            margin: 8px;
+            background-color: #878787;
+            border: 2px #00aaaa solid;
+
+            .title {
+                background-color: #22aaff;
+                border: 1px #aa00aa solid
+            }
+
+            .artist {
+                background-color: #ffaa22;
+                border: 1px #0022d9 solid
+            }
+        }
+
+    }
+
+}
