@@ -1,39 +1,32 @@
-import { useState } from "react";
-import { invoke } from "@tauri-apps/api/tauri";
+import { useEffect, useState } from "react";
 
 import "./App.css";
-import { Player } from "./components/Player";
-import Sidebar from "./components/Sidebar";
-import SidebarToggle from "./components/SidebarToggle";
-import MainContent from "./components/MainContent";
-
-// https://developer.spotify.com/documentation/web-api/howtos/web-app-profile
+// import Home from "./components/Home";
+import { Login } from "./components/Login";
+import WebPlayback from "./components/WebPlayback";
 
 function App() {
+  const [token, setToken] = useState('');
 
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  // call to get token on app startup
 
-  const toggleSidebar = () => {
-    setSidebarCollapsed(!sidebarCollapsed);
-  };
+  useEffect(() => {
+
+    async function getToken() {
+      const response = await fetch('http://localhost:8080/auth/token');
+      const json = await response.json();
+      setToken(json.access_token);
+    }
+
+    getToken();
+
+  }, []);
+
 
   return (
-    <div className="container">
-      <div className="row top-row">
-        <div className="column column-1">
-          <SidebarToggle collapsed={sidebarCollapsed} onClick={toggleSidebar} />
-          <Sidebar collapsed={sidebarCollapsed} />
-        </div>
-        <div className="column column-2">
-          <MainContent />
-        </div>
-      </div>
-      <div className="row bottom-row">
-        <div className="column column-3">
-          <Player />
-        </div>
-      </div>
-    </div>
+    <>
+      {(token === "") ? <Login /> : <WebPlayback token={token} />}
+    </>
   );
 }
 
