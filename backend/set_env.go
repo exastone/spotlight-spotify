@@ -5,6 +5,6 @@ import (
 )
 
 func setenv() {
-	godotenv.Load(".env", ".bearer_token", ".client")
-	// godotenv.Load(".client")
+	// godotenv.Load(".env", ".bearer_token", ".client")
+	godotenv.Load(".client")
 }
