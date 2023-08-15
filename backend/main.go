@@ -2,6 +2,7 @@ package main
 
 import (
 	"backend/api/auth"
+	"backend/database"
 	"fmt"
 	"log"
 	"net/http"
@@ -31,6 +32,16 @@ func disableCors(next http.Handler) http.Handler {
 
 func main() {
 	setenv()
+
+	// Connect to SQLite
+	db, err := database.InitializeDB()
+	if err != nil {
+		fmt.Println("Could not connect to SQLite DB")
+		os.Exit(1)
+	}
+	log.Printf("Connected to SQLite DB")
+	defer db.Close()
+
 	spotifyClientID = os.Getenv("spotify_client_id")
 	spotifyClientSecret = os.Getenv("spotify_client_secret")
 
