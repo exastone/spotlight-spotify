@@ -12,13 +12,19 @@ function App() {
   useEffect(() => {
 
     async function getToken() {
-      const response = await fetch('http://localhost:8080/auth/token');
+      const response = await fetch('http://localhost:8080/auth/token?user_id=0');
       const json = await response.json();
-      console.log(json);
-      setToken(json.access_token);
+      console.log("response: " + json);
+      if (json.access_token === undefined) {
+        console.log("undefined");
+        setToken("");
+      } else {
+        setToken(json.access_token);
+      }
     }
 
     getToken();
+    // console.log("test")
 
   }, []);
 
