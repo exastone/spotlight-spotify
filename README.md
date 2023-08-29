@@ -1,4 +1,4 @@
-# Spotlight - Spotify Client
+# Spotlite - Spotify Client
 
 ## Why a Spotify Client?
 
@@ -14,5 +14,5 @@
 
 #### UI Preview
 
-![Spotlight - Light mode](spotlight-light.png)
-![Spotlight - Dark mode](spotlight-dark.png)
+![Spotlite - Light mode](spotlight-light.png)
+![Spotlite - Dark mode](spotlight-dark.png)
