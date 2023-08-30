@@ -14,5 +14,5 @@
 
 #### UI Preview
 
-![Spotlite - Light mode](spotlight-light.png)
-![Spotlite - Dark mode](spotlight-dark.png)
+![Spotlite - Light mode](assets/spotlite-light.png)
+![Spotlite - Dark mode](assets/spotlite-dark.png)
